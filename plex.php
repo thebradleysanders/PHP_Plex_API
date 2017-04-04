@@ -66,6 +66,28 @@ class plexApi {
 		return $this->getData($link, $get);
 	}
 	
+	/* General plex system information */
+	public function getSystem(){
+		$link="/system";
+		$get="";
+		return $this->getData($link, $get);
+	}
+	
+	/* Show ondeck list */
+	public function getOnDeck(){
+		$link="/library/onDeck";
+		$get="";
+		return $this->getData($link, $get);
+	}
+	
+	/* Gets the server preferences */
+	public function getPrefs(){
+		$link="/:/prefs";
+		$get="";
+		return $this->getData($link, $get);
+	}
+	
+	
 	/* create image url from thumb */
 	public function getImage($name){
 		return "http://".$this->plexServer.":32400".$name."?X-Plex-Token=".$this->plexToken;
